@@ -1,17 +1,28 @@
-import Layout from '../components/Layout'
-import Link from 'next/link'
-
+import Layout from '../components/layout.js'
 
 const Index = () => (
-  <Layout>
-    <Link href="/example">
-      <a>Example</a>
-    </Link>
-    <br />
-    <Link href="/test">
-      <a>test</a>
-    </Link>
-  </Layout>
+    <div>
+        <Layout>
+        </Layout>
+        <style jsx global>{`
+      body {
+        background: #ffff;
+        font: 11px menlo;
+        color: #fff;
+      }
+      .demo-card-wide > .mdl-card__title {
+        color: #fff;
+        height: 176px;
+        background: url('../assets/graph.JPG') center / cover;
+        }
+      .demo-card-wide {
+        color: #fff;
+        }
+      .material-icons {
+        padding-right: 10px;
+        }
+    `}</style>
+    </div>
 )
 
 export default Index
