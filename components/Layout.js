@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Card from './card'
+import Card from './Card'
 
 export default (props) => (
     <div class="wrapper">
