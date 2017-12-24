@@ -20,6 +20,18 @@ export default (props) => (
                         <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
                             <i class="material-icons">search</i>
                         </label>
+                        {/* The three dots on right top corner ends */}
+                        <button id="demo-menu-lower-right"
+                         class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                            </button>
+
+                            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                             for="demo-menu-lower-right">
+                                <li class="mdl-menu__item">Option</li>
+                                <li class="mdl-menu__item">Option 2</li>
+                                </ul>
+                        {/* The three dots on right top corner ends */}
                     </div>
                 </header>
                 <div class="mdl-layout__drawer">
