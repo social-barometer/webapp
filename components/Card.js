@@ -1,5 +1,7 @@
+import  Dashboard from  './Dashboards'
 export default (props) => (
-    <div class = "large-card-main">
+    <div className = "large-card-main">
+        ReactDOM.render(<Dashboard />, document.getElementById('root'));
         <div className="demo-card-wide mdl-card mdl-shadow--2dp">
         <div className="mdl-card__title">
             <h2 className="mdl-card__title">
@@ -10,11 +12,11 @@ export default (props) => (
             Daily tweets
             {props.text}
         </div>
-        <div class="mdl-card__actions mdl-card--border">
-            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-               <i class="material-icons">update</i> updated 4 minutes ago
+        <div className="mdl-card__actions mdl-card--border">
+            <a className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+               <i className="material-icons">update</i> updated 4 minutes ago
             </a>
-            <div class="mdl-layout-spacer"></div>
+            <div className="mdl-layout-spacer"></div>
         </div>
         </div>
 

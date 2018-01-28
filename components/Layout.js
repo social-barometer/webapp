@@ -3,28 +3,30 @@ import Card from './Card'
 import SmCard from './SmallCard'
 import Header from './Header'
 export default (props) => (
-    <div class="wrapper">
+    <div className="wrapper">
         <Head>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta charSet="utf-8" />
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
             <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css" />
-            <link rel="stylesheet" type="text/css" href="../include/epoch.min.css"/>
+            <link rel="stylesheet" type="text/css" href="../include/css/epoch.min.css"/>
+            <script src="../include/js/d3.min.js" />
+            <script src="../include/js/epoch.min.js" />
             <script defer src="https://code.getmdl.io/1.3.0/material.min.js" />
             <script src="https://d3js.org/d3.v4.js"/>
-            <script src="../include/chart.js"/>
-            <script src="../include/epoch.min.js"/>
+            <script src="https://d3js.org/d3.v4.min.js"/>
+            <script src="../include/js/chart.js" />
         </Head>
-            <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+            <div className="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
                 <Header/>
-                <div class="mdl-layout__drawer">
-                    <span class="mdl-layout-title"><b>Social Barometer</b></span>
-                    <nav class="demo-navigation mdl-navigation">
-                        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
-                        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Dashboard</a>
-                        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Social</a>
-                        <div class="mdl-layout-spacer"></div>
+                <div className="mdl-layout__drawer">
+                    <span className="mdl-layout-title"><b>Social Barometer</b></span>
+                    <nav className="demo-navigation mdl-navigation">
+                        <a className="mdl-navigation__link" href=""><i className="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+                        <a className="mdl-navigation__link" href=""><i className="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Dashboard</a>
+                        <a className="mdl-navigation__link" href=""><i className="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Social</a>
+                        <div className="mdl-layout-spacer"></div>
                     </nav>
                 </div>
                 <div>
