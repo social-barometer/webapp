@@ -1,7 +1,5 @@
-import  Dashboard from  './Dashboards'
 export default (props) => (
     <div className = "large-card-main">
-        ReactDOM.render(<Dashboard />, document.getElementById('root'));
         <div className="demo-card-wide mdl-card mdl-shadow--2dp">
         <div className="mdl-card__title">
             <h2 className="mdl-card__title">
