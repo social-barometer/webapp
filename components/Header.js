@@ -34,14 +34,14 @@ export default (props) => (
                 {/* The three dots on right top corner ends */}
             </div>
             <style jsx>{`
-            .mdl-layout__header-row{
-            background: #fff;
-            color: #000;
-            }
-            .mdl-textfield.mdl-js-textfield{
-            width: 100px;
+                .mdl-layout__header-row{
+                background: #fff;
+                color: #000;
+                }
+                .mdl-textfield.mdl-js-textfield{
+                width: 100px;
 
-            }
-    `}</style>
-        </div>
+                }
+            `}</style>
+    </div>
 )
