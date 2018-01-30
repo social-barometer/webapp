@@ -2,6 +2,11 @@ import fetch from 'isomorphic-unfetch'
 import ChartistGraph from '../components/ChartistGraph';
 import Layout from '../components/Layout'
 
+/**
+ * Example from here: https://gionkunz.github.io/chartist-js/examples.html#example-line-path-animation
+ *
+ */
+
 const ajaxChartExample = ({data, options}) => (
   <Layout>
     <h4>Bitcoin price in euros for the last seven days.</h4>
