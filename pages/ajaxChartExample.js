@@ -17,7 +17,6 @@ const ajaxChartExample = ({data, options}) => (
 const getDate = (timestamp) => {
   const d = new Date(0);
   d.setUTCSeconds(timestamp)
-  console.log(timestamp)
   return `${d.getDate()}.${d.getMonth() + 1}`
 }
 
@@ -26,9 +25,6 @@ ajaxChartExample.getInitialProps = async ({ req }) => {
   const json = await res.json()
   const times = json.Data.map(x => getDate(x.time))
   const values = json.Data.map(x => x.close)
-
-  console.log(values.length)
-  console.log(times.length)
 
   return {
     data: {
