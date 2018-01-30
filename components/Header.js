@@ -8,16 +8,16 @@ export default (props) => (
                     <form action="#">
                         <div className="mdl-textfield mdl-js-textfield">
                             <input className="mdl-textfield__input" type="text" id="sample1"/>
-                            <label className="mdl-textfield__label" for="sample1">Event Name</label>
+                            <label className="mdl-textfield__label" htmlFor="sample1">Event Name</label>
                         </div>
 
                         <div className="mdl-textfield mdl-js-textfield">
                         <input className="mdl-textfield__input" type="text" id="sample1"/>
-                        <label className="mdl-textfield__label" for="sample1">Keyword</label>
+                        <label className="mdl-textfield__label" htmlFor="sample1">Keyword</label>
                         </div>
                     </form>
                 </div>
-                <label className="mdl-button mdl-js-button mdl-button--icon" for="search">
+                <label className="mdl-button mdl-js-button mdl-button--icon" htmlFor="search">
                     <i className="material-icons">search</i>
                 </label>
                 {/* The three dots on right top corner ends */}
@@ -27,7 +27,7 @@ export default (props) => (
                 </button>
 
                 <ul className="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                    for="demo-menu-lower-right">
+                    htmlFor="demo-menu-lower-right">
                     <li className="mdl-menu__item">Option</li>
                     <li className="mdl-menu__item">Option 2</li>
                 </ul>

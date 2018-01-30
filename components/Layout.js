@@ -10,13 +10,7 @@ export default (props) => (
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
             <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css" />
-            <link rel="stylesheet" type="text/css" href="../include/css/epoch.min.css"/>
-            <script src="../include/js/d3.min.js" />
-            <script src="../include/js/epoch.min.js" />
             <script defer src="https://code.getmdl.io/1.3.0/material.min.js" />
-            <script src="https://d3js.org/d3.v4.js"/>
-            <script src="https://d3js.org/d3.v4.min.js"/>
-            <script src="../include/js/chart.js" />
         </Head>
             <div className="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
                 <Header/>
@@ -32,18 +26,18 @@ export default (props) => (
                 <div>
 
                 </div>
-                <main class="mdl-layout__content">
-                    <div class="page-content">
-                            <div class="mdl-cell mdl-cell-small mdl-cell--12-col mdl-grid">
-                                <div class="mdl-cell-small mdl-cell--3-col"><SmCard/></div>
-                                <div class="mdl-cell-small mdl-cell--3-col"><SmCard/></div>
-                                <div class="mdl-cell-small mdl-cell--3-col"><SmCard/></div>
-                                <div class="mdl-cell-small mdl-cell--3-col"><SmCard/></div>
+                <main className="mdl-layout__content">
+                    <div className="page-content">
+                            <div className="mdl-cell mdl-cell-small mdl-cell--12-col mdl-grid">
+                                <div className="mdl-cell-small mdl-cell--3-col"><SmCard/></div>
+                                <div className="mdl-cell-small mdl-cell--3-col"><SmCard/></div>
+                                <div className="mdl-cell-small mdl-cell--3-col"><SmCard/></div>
+                                <div className="mdl-cell-small mdl-cell--3-col"><SmCard/></div>
                             </div>
-                            <div class="mdl-cell mdl-cell--12-col mdl-grid">
-                                <div class="mdl-cell mdl-cell--4-col"><Card/></div>
-                                <div class="mdl-cell mdl-cell--4-col"><Card/></div>
-                                <div class="mdl-cell mdl-cell--4-col"><Card/></div>
+                            <div className="mdl-cell mdl-cell--12-col mdl-grid">
+                                <div className="mdl-cell mdl-cell--4-col"><Card/></div>
+                                <div className="mdl-cell mdl-cell--4-col"><Card/></div>
+                                <div className="mdl-cell mdl-cell--4-col"><Card/></div>
                             </div>
                     </div>
                 </main>
