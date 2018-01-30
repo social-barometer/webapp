@@ -9,7 +9,7 @@ import Layout from '../components/Layout'
 
 const ajaxChartExample = ({data, options}) => (
   <Layout>
-    <h4>Bitcoin price in euros for the last seven days.</h4>
+    <h4>Bitcoin price in euros.</h4>
     <ChartistGraph data={data} options={options} type="Line" />
   </Layout>
 )
