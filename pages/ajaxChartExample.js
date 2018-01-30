@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-unfetch'
-import ChartistGraph from '../components/charts/ChartistGraph';
+import ChartistGraph from '../components/ChartistGraph';
 import Layout from '../components/Layout'
 
 const ajaxChartExample = ({data, options}) => (
