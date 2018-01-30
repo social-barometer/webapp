@@ -1,4 +1,3 @@
-
 export default (props) => (
         <div className="mdl-layout__header">
             <div className="mdl-layout__header-row">
