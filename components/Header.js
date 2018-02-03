@@ -1,3 +1,4 @@
+import Login from '../components/Login'
 export default (props) => (
         <div className="mdl-layout__header">
             <div className="mdl-layout__header-row">
@@ -31,6 +32,8 @@ export default (props) => (
                     <li className="mdl-menu__item">Option 2</li>
                 </ul>
                 {/* The three dots on right top corner ends */}
+                <Login>
+                    </Login>
             </div>
             <style jsx>{`
                 .mdl-layout__header-row{
