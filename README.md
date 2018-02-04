@@ -1,4 +1,4 @@
-# Social Barometer Web App
+#Social Barometer Web App
 
 The web app for the project Social Barometer lives here.
 
