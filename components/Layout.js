@@ -27,6 +27,9 @@ export default (props) => (
                         <Link href="/ajaxChartExample">
                             <a className="mdl-navigation__link">Chart example</a>
                         </Link>
+                        <Link href="/crimeMapExample">
+                            <a className="mdl-navigation__link">Crime map example</a>
+                        </Link>
                         <div className="mdl-layout-spacer"></div>
                     </nav>
                 </div>
