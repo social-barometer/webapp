@@ -14,13 +14,13 @@ const CrimeMap = compose(
   }),
   withScriptjs,
   withGoogleMap
-)(({ center, markers }) =>
+)(({ center, crimes }) =>
   <GoogleMap
     defaultZoom={14}
     defaultCenter={center}
   >
-    { markers.map((m, i) =>
-      <Marker key={i} position={{lat: m.lat, lng: m.lng }} />
+    { crimes.map((c, i) =>
+      <Marker key={i} position={{lat: c.lat, lng: c.lng }} />
     )}
   </GoogleMap>
 )
