@@ -13,6 +13,6 @@ The web app for the project Social Barometer lives here.
 In order for Google Maps to work add a secrets.json file with the following property:
 ```json
 {
-  googleMapsAPIKey": "<insert api key here>"
+  "googleMapsAPIKey": "<insert api key here>"
 }
 ```
