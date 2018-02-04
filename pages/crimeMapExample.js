@@ -3,8 +3,6 @@ import CrimeMap from '../components/CrimeMap';
 import ChartistGraph from '../components/ChartistGraph';
 import Layout from '../components/Layout'
 
-const center = { lat: 51.492983, lng: -0.114283 }
-
 const crimeMapExample = ({ center, crimes, categories }) => (
   <Layout>
     <h3>Crime map:</h3>
@@ -21,6 +19,7 @@ const crimeMapExample = ({ center, crimes, categories }) => (
 )
 
 crimeMapExample.getInitialProps = async ({ req }) => {
+  const center = { lat: 51.492983, lng: -0.114283 }
   const resp = await fetch(
     `https://data.police.uk/api/crimes-street/all-crime?lat=${center.lat}&lng=${center.lng}&date=2017-1`
   )
