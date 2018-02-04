@@ -2,6 +2,9 @@ import Head from 'next/head'
 import Card from './Card'
 import SmCard from './SmallCard'
 import Header from './Header'
+import GoogleLogin from '../components/GoogleLogin'
+import TwitterLogin from '../components/TwitterLogin'
+import FacebookLogin from '../components/FacebookLogin'
 
 import Link from 'next/link'
 
@@ -37,6 +40,12 @@ export default (props) => (
 
                 </div>
                 <main className="mdl-layout__content">
+                <GoogleLogin>
+                        </GoogleLogin>
+                        <TwitterLogin>
+                            </TwitterLogin>
+                            <FacebookLogin>
+                                </FacebookLogin>
                     {/* ONLY { props.children } here  */}
                     { props.children }
                 </main>
