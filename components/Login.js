@@ -4,8 +4,7 @@ import ReactGoogleAuth from 'react-google-auth';
 function Example(props) {
     console.log("gapi exists", gapi);
     return <div>
-        <h1>App goes here</h1>
-        <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onClick={props.onSignOutClick}>Google Sign out</button>
+        <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onClick={props.onSignOutClick}>Sign out</button>
     </div>;
 }
 
@@ -22,7 +21,7 @@ function SignIn(props) {
         return <div className="Text Text-strong">Error!</div>;
     }
     return <div>
-        <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onClick={props.onSignInClick}>Google Sign in</button>
+        <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onClick={props.onSignInClick}>Sign in</button>
         {props.signingIn && <div>Signing in...</div>}
     </div>;
 }
