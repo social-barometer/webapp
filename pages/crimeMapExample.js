@@ -7,8 +7,9 @@ const center = { lat: 51.492983, lng: -0.114283 }
 
 const crimeMapExample = ({ center, crimes, categories }) => (
   <Layout>
-    <h4>Crime map:</h4>
+    <h3>Crime map:</h3>
     <CrimeMap center={center} crimes={crimes} />
+    <h3>Frequencies of crime types</h3>
     <ChartistGraph
       data={categories}
       options={{
@@ -46,7 +47,7 @@ crimeMapExample.getInitialProps = async ({ req }) => {
       labels: [],
       series: [[]]
     })
-    
+
   return {
     center: center,
     crimes: crimes,
