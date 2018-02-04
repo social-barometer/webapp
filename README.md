@@ -10,7 +10,7 @@ The web app for the project Social Barometer lives here.
 4) Open http://localhost:3000/
 
 ### Secrets
-In order for Google Maps to work add a secrets.json file with the following property:
+In order for Google Maps to work add a secrets.json file to repo root with the following property:
 ```json
 {
   "googleMapsAPIKey": "<insert api key here>"
