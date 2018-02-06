@@ -40,6 +40,9 @@ const Layout = ({ children }) => (
                         <Link href="/auth">
                             <a className="mdl-navigation__link">Authentication</a>
                         </Link>
+                        <Link href="/tweets">
+                            <a className="mdl-navigation__link">Tweets</a>
+                        </Link>
                         <div className="mdl-layout-spacer"></div>
                     </nav>
                 </div>
