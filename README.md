@@ -16,3 +16,11 @@ In order for Google Maps to work add a secrets.json file to repo root with the f
   "googleMapsAPIKey": "<insert api key here>"
 }
 ```
+
+### To run with scraper
+1) Open a new terminal window
+2) Clone the scraper to a safe location:
+`git clone https://github.com/social-barometer/scraper.git`
+3) `cd scraper`
+4) `npm install`
+5) `node index`
