@@ -1,25 +1,11 @@
 import Login from '../components/Login'
-export default (props) => (
+import EventForm from '../components/EventForm'
+
+export default ( {loginCallback} ) => (
         <div className="mdl-layout__header">
             <div className="mdl-layout__header-row">
                 <span className="mdl-layout__title">Dashboard</span>
                 <div className="mdl-layout-spacer"></div>
-                <div>
-                    <form action="#">
-                        <div className="mdl-textfield mdl-js-textfield">
-                            <input className="mdl-textfield__input" type="text" id="sample1"/>
-                            <label className="mdl-textfield__label" htmlFor="sample1">Event Name</label>
-                        </div>
-
-                        <div className="mdl-textfield mdl-js-textfield">
-                        <input className="mdl-textfield__input" type="text" id="sample1"/>
-                        <label className="mdl-textfield__label" htmlFor="sample1">Keyword</label>
-                        </div>
-                    </form>
-                </div>
-                <label className="mdl-button mdl-js-button mdl-button--icon" htmlFor="search">
-                    <i className="material-icons">search</i>
-                </label>
                 {/* The three dots on right top corner ends */}
                 <button id="demo-menu-lower-right"
                         className="mdl-button mdl-js-button mdl-button--icon">
@@ -32,8 +18,7 @@ export default (props) => (
                     <li className="mdl-menu__item">Option 2</li>
                 </ul>
                 {/* The three dots on right top corner ends */}
-                <Login>
-                    </Login>
+                <Login />
             </div>
             <style jsx>{`
                 .mdl-layout__header-row{

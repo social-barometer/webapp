@@ -47,6 +47,8 @@ crimeMapExample.getInitialProps = async ({ req }) => {
       series: [[]]
     })
 
+  console.log(json.length)
+  
   return {
     center: center,
     crimes: crimes,

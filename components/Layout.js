@@ -1,3 +1,4 @@
+import React, { Component } from 'react'
 import Head from 'next/head'
 import Card from './Card'
 import SmCard from './SmallCard'
@@ -8,7 +9,7 @@ import FacebookLogin from '../components/FacebookLogin'
 
 import Link from 'next/link'
 
-export default (props) => (
+const Layout = ({ children }) => (
     <div className="wrapper">
         <Head>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,7 +21,7 @@ export default (props) => (
             <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" />
         </Head>
             <div className="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-                <Header/>
+                <Header />
                 <div className="mdl-layout__drawer">
                     <span className="mdl-layout-title"><b>Social Barometer</b></span>
                     <nav className="demo-navigation mdl-navigation">
@@ -33,6 +34,12 @@ export default (props) => (
                         <Link href="/crimeMapExample">
                             <a className="mdl-navigation__link">Crime map example</a>
                         </Link>
+                        <Link href="/eventFormPage">
+                            <a className="mdl-navigation__link">Event Form</a>
+                        </Link>
+                        <Link href="/auth">
+                            <a className="mdl-navigation__link">Authentication</a>
+                        </Link>
                         <div className="mdl-layout-spacer"></div>
                     </nav>
                 </div>
@@ -40,14 +47,8 @@ export default (props) => (
 
                 </div>
                 <main className="mdl-layout__content">
-                <GoogleLogin>
-                        </GoogleLogin>
-                        <TwitterLogin>
-                            </TwitterLogin>
-                            <FacebookLogin>
-                                </FacebookLogin>
-                    {/* ONLY { props.children } here  */}
-                    { props.children }
+                    {/* ONLY { children } here  */}
+                    { children }
                 </main>
             </div>
         <style jsx global>{`
@@ -69,3 +70,5 @@ export default (props) => (
     `}</style>
     </div>
 )
+
+export default Layout
