@@ -9,6 +9,7 @@ const tweets = (props) => (
 )
 
 tweets.getInitialProps = async () => {
+  // These props will be fetched from the database but for now they're hardcoded.
   const keywords = 'Puppies'
   const user = 1121221
   const scraperURL = 'http://localhost:3001'
