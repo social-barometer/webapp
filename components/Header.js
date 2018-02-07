@@ -1,7 +1,7 @@
-import Login from '../components/Login'
-import EventForm from '../components/EventForm'
+import EventForm from './EventForm'
+import Login from './Login'
 
-export default ( {loginCallback} ) => (
+export default ({ user, login, logout }) => (
         <div className="mdl-layout__header">
             <div className="mdl-layout__header-row">
                 <span className="mdl-layout__title">Dashboard</span>
@@ -18,7 +18,7 @@ export default ( {loginCallback} ) => (
                     <li className="mdl-menu__item">Option 2</li>
                 </ul>
                 {/* The three dots on right top corner ends */}
-                <Login />
+                <Login user={user} login={login} logout={logout} />
             </div>
             <style jsx>{`
                 .mdl-layout__header-row{
