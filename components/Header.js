@@ -1,4 +1,3 @@
-import EventForm from './EventForm'
 import Login from './Login'
 
 export default ({ user, login, logout }) => (

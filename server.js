@@ -10,9 +10,10 @@ app.prepare()
     const server = express()
 
 
-    // server.get('/example', (req, res) => {
-    //   app.render(req, res, '/example')
-    // })
+    server.get('/dashboard/:name', (req, res) => {
+      const actualPage = '/dashboard'
+      app.render(req, res, actualPage, req.params)
+    })
 
     server.get('*', (req, res) => {
       return handle(req, res)

@@ -1,15 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component, Children } from 'react'
 import Head from 'next/head'
 import Card from './Card'
 import SmCard from './SmallCard'
 import Header from './Header'
 import firebase, { auth, provider } from '../firebase'
+import Router from 'next/router'
 
 import Link from 'next/link'
 
 class Layout extends Component {
-
-
 
     constructor() {
         super()
@@ -29,15 +28,11 @@ class Layout extends Component {
     async login () {
         try {
             const result = await auth.signInWithPopup(provider)
-            const user = {
-                name: result.user.displayName,
-                twitter: {
-                    token: result.credential.accessToken,
-                    secret: result.credential.secret,
-                }
-            }
+            const user = result.user
             this.setState({ user })
-            console.log(`Welcome ${user.name}!`)
+            localStorage.setItem('twitterToken', result.credential.accessToken)
+            localStorage.setItem('twitterSecret', result.credential.secret)
+            console.log(`Welcome ${user.displayName}!`)
         } catch(e) {
             throw new Error(e)
         }
@@ -47,20 +42,31 @@ class Layout extends Component {
         try {
             await auth.signOut
             this.setState({ user: null })
+            localStorage.removeItem('twitterToken')
+            localStorage.removeItem('twitterSecret')
+            Router.push({
+                pathname: '/'
+              })
         } catch(e) {
             throw new Error(e)
         }
     }
 
     render() {
+
+        // Give user prop to children
+        const { children } = this.props
+        const childrenWithProps = Children.map(children, child =>
+            React.cloneElement(child, { user: this.state.user }))
+
         return (
             <div className="wrapper">
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta charSet="utf-8" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-                <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
                 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css" />
+                <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
                 <script defer src="https://code.getmdl.io/1.3.0/material.min.js" />
                 <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" />
             </Head>
@@ -72,17 +78,26 @@ class Layout extends Component {
                             <a className="mdl-navigation__link" href=""><i className="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
                             <a className="mdl-navigation__link" href=""><i className="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Dashboard</a>
                             <a className="mdl-navigation__link" href=""><i className="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Social</a>
+                            
+                            {
+                                // Only logged in users will see:
+                                this.state.user && (
+                                <div>
+                                    <Link href="/dashboard">
+                                        <a className="mdl-navigation__link">dashboard</a>
+                                    </Link>
+                                    <Link href="/dashboardFormPage">
+                                        <a className="mdl-navigation__link">Dashboard Form</a>
+                                    </Link>
+                                </div>
+                                )
+                            }
+                            
                             <Link href="/ajaxChartExample">
                                 <a className="mdl-navigation__link">Chart example</a>
                             </Link>
                             <Link href="/crimeMapExample">
                                 <a className="mdl-navigation__link">Crime map example</a>
-                            </Link>
-                            <Link href="/eventFormPage">
-                                <a className="mdl-navigation__link">Event Form</a>
-                            </Link>
-                            <Link href="/auth">
-                                <a className="mdl-navigation__link">Authentication</a>
                             </Link>
                             <Link href="/tweets">
                                 <a className="mdl-navigation__link">Tweets</a>
@@ -94,8 +109,7 @@ class Layout extends Component {
     
                     </div>
                     <main className="mdl-layout__content">
-                        {/* ONLY { this.props.children } here  */}
-                        { this.props.children }
+                        { childrenWithProps }
                     </main>
                 </div>
             <style jsx global>{`
