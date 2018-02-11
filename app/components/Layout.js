@@ -8,6 +8,7 @@ import LoginButton from './LoginButton'
 import firebase, { auth, provider } from '../fire'
 import getDashboards from '../lib/getDashboards'
 import secrets from '../secrets.json'
+import Router from 'next/router'
 
 const DashboardDropdown = ({ dashboards }) => (
   <NavDropdown title="Dashboards" id="dashboard-dropdown">
@@ -99,9 +100,11 @@ class Layout extends Component {
             <Link href="/"><a className="navbar-brand">Social Barometer</a></Link>
           </Navbar.Header>
           <Nav>
-          { dashboards
-            ? <DashboardDropdown dashboards={ dashboards } />
-            : <NavItem href="/createDashboard">Create a new dashboard</NavItem>
+          { user
+            ? dashboards
+              ? <DashboardDropdown dashboards={ dashboards } />
+              : <NavItem href="/createDashboard">Create a new dashboard</NavItem>
+            : ''
           }
           </Nav>
             <Nav pullRight>
