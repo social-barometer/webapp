@@ -6,8 +6,9 @@ The web app for the project Social Barometer lives here.
 
 1) Clone the repo
 2) `npm install`
-3) `npm run dev`
-4) Open http://localhost:9001/
+3)  Add `secrets.json` to app folder.
+4) `npm run dev`
+5) Open http://localhost:9001/
 
 ### Secrets
 Ask Miika for secrets
