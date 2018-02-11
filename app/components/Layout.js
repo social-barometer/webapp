@@ -89,6 +89,7 @@ class Layout extends Component {
         <meta charSet="utf-8" />
         <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" />
         <link rel="stylesheet" href="/static/main.css" />
+        <link rel="stylesheet" href="/static/loaders.css" />
         <script
           type="text/javascript"
           src={`https://maps.googleapis.com/maps/api/js?key=${secrets.googleMapsAPIKey}&libraries=places`}>
