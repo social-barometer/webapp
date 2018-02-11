@@ -6,8 +6,10 @@ import Layout from '../components/Layout'
 import TweetEmotionPie from '../components/TweetEmotionPie'
 import TweetEmotionGraph from '../components/TweetEmotionGraph'
 import CrimeMap from '../components/CrimeMap'
+import Forecast from '../components/Forecast'
 import { Grid, Row, Col, Panel } from 'react-bootstrap'
 import ChartistGraph from '../components/ChartistGraph'
+
 
 class Dashboard extends Component {
 
@@ -25,11 +27,12 @@ class Dashboard extends Component {
 
   async fetchData(did) {
     const info = await getDashboardInfo(did)
+    await this.setState({ info })
     const [crime, twitterAnalysis] = await Promise.all([
       getCrime({ lat: info.location.lat, lng: info.location.lng }),
       getTwitterAnalysis(did)
     ])
-    await this.setState({ twitterAnalysis, crime, info })
+    await this.setState({ twitterAnalysis, crime })
     console.log('state chaned', this.state)
   }
 
@@ -63,7 +66,7 @@ class Dashboard extends Component {
               twitterAnalysis.length ? (
                 <div>
                 <TweetEmotionPie
-                  title="Emotions triggered"
+                  title="Emotions triggered in Twitter"
                   analysis={ emotion } />
                 {/* <TweetEmotionGraph
                    title="Emotions through time"
@@ -71,6 +74,16 @@ class Dashboard extends Component {
                 </div>
               ) : ''
             }
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              { info &&  <Forecast
+                  name={ name }
+                  coors={{ lat: info.location.lat, lng: info.location.lng }}
+                  height="300px"
+                  width="100%"
+                /> }
             </Col>
           </Row>
           <Row>
