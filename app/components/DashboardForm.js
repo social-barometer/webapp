@@ -16,7 +16,7 @@ import {
 const TextField = ({ label, name, value, placeholder, validationState, handleChange }) => (
   <FormGroup
     controlId="formBasicText"
-    validationState={ validationState } 
+    validationState={ validationState }
   >
     <ControlLabel>{ label }</ControlLabel>
     <FormControl
@@ -144,7 +144,8 @@ class DashboardForm extends Component {
           validationState={ this.state.keywords.validationState }
           handleChange={ this.handleChange }
           label="Keywords for the dashboard"
-        />
+            />
+        <label>Location for the dashboard</label>
         <PlacesAutocomplete
           inputProps={ placesProps }
           classNames={{
