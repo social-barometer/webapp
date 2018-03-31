@@ -41,7 +41,7 @@ class Layout extends Component {
     this.login = this.login.bind(this)
     this.logout = this.logout.bind(this)
   }
-  
+
   async login () {
     try {
         const result = await auth.signInWithPopup(provider)
@@ -70,7 +70,7 @@ class Layout extends Component {
   }
 
   async componentDidMount() {
-    auth.onAuthStateChanged(async (user) => {
+      auth.onAuthStateChanged(async (user) => {
       if (user) {
         const dashboards = await getDashboards(user.uid)
         this.setState({ user, dashboards })
@@ -95,7 +95,8 @@ class Layout extends Component {
           src={`https://maps.googleapis.com/maps/api/js?key=${secrets.googleMapsAPIKey}&libraries=places`}>
         </script>
       </Head>
-      <Theme>
+        <Theme>
+        <div>
         <Navbar>
           <Navbar.Header>
             <Link href="/"><a className="navbar-brand">Social Barometer</a></Link>
@@ -117,6 +118,7 @@ class Layout extends Component {
             </Nav>
         </Navbar>
         { this.props.children }
+        </div>
       </Theme>
       <style jsx global>{`
 
