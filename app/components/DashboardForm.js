@@ -122,7 +122,8 @@ class DashboardForm extends Component {
 
     const placesProps = {
       value: this.state.location.value,
-      onChange: this.handleLocationChange
+      onChange: this.handleLocationChange,
+      placeHolder: "Enter location for the dashboard",
     }
 
     return (
